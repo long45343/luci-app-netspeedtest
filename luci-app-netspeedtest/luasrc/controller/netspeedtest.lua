@@ -15,19 +15,6 @@ function index()
 	e.acl_depends = { "luci-app-netspeedtest" }
 	
 	entry({"admin", "network", "netspeedtest", "speedtestlan"},cbi("netspeedtest/speedtestlan"),_("Lan Speedtest Web"),20).leaf = true
-	entry({"admin", "network", "netspeedtest", "speedtestiperf3"},cbi("netspeedtest/speedtestiperf3", {hideapplybtn=true, hidesavebtn=true, hideresetbtn=true}),_("Lan Speedtest Iperf3"),30).leaf = true
-        entry({"admin", "network", "netspeedtest", "speedtestwan"},cbi("netspeedtest/speedtestwan", {hideapplybtn=true, hidesavebtn=true, hideresetbtn=true}),_("Broadband speedtest"), 40).leaf = true
-        entry({"admin", "network", "netspeedtest", "speedtestwanweb"},cbi("netspeedtest/speedtestwanweb", {hideapplybtn=true, hidesavebtn=true, hideresetbtn=true}),_("Broadband OpenSpeedtest"), 41).leaf = true
-        entry({"admin", "network", "netspeedtest", "speedtestport"},cbi("netspeedtest/speedtestport", {hideapplybtn=true, hidesavebtn=true, hideresetbtn=true}),_("Server Port Latency Test"), 50).leaf = true
-        entry({"admin", "network", "netspeedtest", "log"}, form("netspeedtest/log"), _("Log"), 60).leaf = true
-	entry({"admin", "network", "netspeedtest", "test_port"}, call("test_port"))
-	entry({"admin", "network", "iperf3_status"}, call("iperf3_status"))
-	entry({"admin", "network", "test_iperf0"}, post("test_iperf0"), nil).leaf = true
-	entry({"admin", "network", "test_iperf1"}, post("test_iperf1"), nil).leaf = true
-	entry({"admin", "network", "netspeedtest", "speedtestwanrun"}, call("speedtestwanrun"))
-	entry({"admin", "network", "netspeedtest", "netcheck"}, call("netcheck"))
-	entry({"admin", "network", "netspeedtest", "dellog"},call("dellog"))
-        entry({"admin", "network", "netspeedtest", "getlog"},call("getlog"))
 end
 
 function netcheck()
